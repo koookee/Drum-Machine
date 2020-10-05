@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import DrumMachine from './Components/DrumMachine.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   //Displays the flexbox close to the center of the page
