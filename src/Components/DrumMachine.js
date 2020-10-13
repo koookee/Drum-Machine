@@ -16,7 +16,7 @@ class DrumMachine extends React.Component{
     return(
       <div id="drum-machine" style={drumMachineDisplay}>
       <Button />
-      <h1 style={borderAround}>Drum machine</h1>
+      <h1 id="display" style={borderAround}>Drum machine</h1>
       </div>
     )
   }

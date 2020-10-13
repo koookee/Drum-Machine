@@ -4,6 +4,20 @@ import Button from 'react-bootstrap/Button';
 class Buttons extends React.Component{
   constructor(){
     super();
+    this.handleClick = this.handleClick.bind(this);
+    this.keyPress = this.keyPress.bind(this);
+  }
+  handleClick(e){
+    console.log(e.target.id);
+    let audio = document.getElementById("Q")
+    audio.play();
+  }
+  componentDidMount() {
+		window.addEventListener("keyup", this.keyPress);
+	}
+  keyPress(event){
+		let key = event.key;
+    console.log(key);
   }
   render(){
     let buttonsDisplay = {
@@ -14,15 +28,19 @@ class Buttons extends React.Component{
   }
     return(
       <div style={buttonsDisplay}>
-        <Button variant="light" size="lg">Q</Button>
-        <Button variant="light" size="lg">W</Button>
-        <Button variant="light" size="lg">E</Button>
-        <Button variant="light" size="lg">A</Button>
-        <Button variant="light" size="lg">S</Button>
-        <Button variant="light" size="lg">D</Button>
-        <Button variant="light" size="lg">Z</Button>
-        <Button variant="light" size="lg">X</Button>
-        <Button variant="light" size="lg">C</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test1" onClick={this.handleClick}>Q
+        <audio style={{display:"none"}} controls className="clip" id="Q">
+        <source src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/295[kb]big-verby-clap.wav.mp3" type="audio/mpeg" />
+        </audio>
+        </Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test2">W</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test3">E</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test4">A</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test5">S</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test6">D</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test7">Z</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test8">X</Button>
+        <Button variant="light" size="lg" className="drum-pad" id="test9">C</Button>
       </div>
     )
   }
