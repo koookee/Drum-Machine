@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import '../CSS/buttons.css';
 
 class Buttons extends React.Component{
   constructor(){
@@ -9,7 +10,11 @@ class Buttons extends React.Component{
   }
   handleClick(e){
     console.log(e.target.id);
-    let audio = document.getElementById("Q")
+    //When the user clicks on the audio before it finishes playing, it repeats the audio
+    //insted of forcing the user to sit through the entire clip
+    let audio = document.getElementById("Q");
+    audio.pause();
+    audio.currentTime = 0;
     audio.play();
   }
   componentDidMount() {
@@ -26,12 +31,13 @@ class Buttons extends React.Component{
     gridTemplateRows:"auto auto auto",
     gap:"5px"
   }
+  let audioArr = ["https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/295[kb]big-verby-clap.wav.mp3",
+
+]
     return(
       <div style={buttonsDisplay}>
         <Button variant="light" size="lg" className="drum-pad" id="test1" onClick={this.handleClick}>Q
-        <audio style={{display:"none"}} controls className="clip" id="Q">
-        <source src="https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Claps/295[kb]big-verby-clap.wav.mp3" type="audio/mpeg" />
-        </audio>
+        <audio className="clip" id="Q" src={audioArr[0]} type="audio/mpeg" />
         </Button>
         <Button variant="light" size="lg" className="drum-pad" id="test2">W</Button>
         <Button variant="light" size="lg" className="drum-pad" id="test3">E</Button>
