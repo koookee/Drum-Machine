@@ -7,7 +7,9 @@ class Buttons extends React.Component{
     super();
     this.handleClick = this.handleClick.bind(this);
     this.keyPress = this.keyPress.bind(this);
+    this.state = {audioName : ""}
   }
+
   handleClick(e){
     let audioTypeToKey = {
       "chord 1":"Q",
@@ -20,6 +22,8 @@ class Buttons extends React.Component{
       "snare":"X",
       "kick":"C"
     }
+    this.setState({audioName:e.target.id});
+    console.log(this.state.audioName);
     //When the user clicks on the audio before it finishes playing, it repeats the audio
     //insted of forcing the user to sit through the entire clip
     let audio = document.getElementById(audioTypeToKey[e.target.id]);
@@ -31,8 +35,18 @@ class Buttons extends React.Component{
 		window.addEventListener("keyup", this.keyPress);
 	}
   keyPress(event){
-		let key = event.key;
-    console.log(key);
+    //Another way of using the drum machine
+    //User can use the keyboard to generate sounds instead of clicking on the buttons
+		let key = event.key.toUpperCase();
+    //Regular expression to check if the key entered is valid
+    if((/^[QWEASDZXC]$/).test(key))
+    {
+      this.setState({audioName:key});
+      let audio = document.getElementById(key);
+      audio.pause();
+      audio.currentTime = 0;
+      audio.play();
+    }
   }
   render(){
     let buttonsDisplay = {

@@ -7,7 +7,7 @@ class DrumMachine extends React.Component{
     this.state = {};
   }
   render(){
-    let borderAround = {borderStyle:"solid"} //Just to see flex child containers
+    let borderAround = {borderStyle:"solid",borderRadius: "10px", alignSelf:"center"}
     let drumMachineDisplay = {
       display:"flex",
       borderStyle:"solid",

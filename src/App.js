@@ -7,7 +7,9 @@ function App() {
   //Displays the flexbox close to the center of the page
   let flexDisplay = {
     margin:"15% auto",
-    width:"50%"
+    width:"50%",
+    borderRadius: "5px",
+    overflow:"hidden"
   }
   return (
     <div style={flexDisplay}>
