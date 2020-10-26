@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Display from './Display.js';
-import '../CSS/buttons.css';
+import '../CSS/DrumMachine.css';
 
 class DrumMachine extends React.Component{
   constructor(){
@@ -62,11 +62,6 @@ class DrumMachine extends React.Component{
     }
   }
   render(){
-    let drumMachineDisplay = {
-      display:"flex",
-      borderStyle:"solid",
-      justifyContent:"space-evenly"
-    }
     let buttonsDisplay = {
     display:"grid",
     gridTemplateColumns:"auto auto auto",
@@ -86,7 +81,7 @@ class DrumMachine extends React.Component{
   ]
 
     return(
-      <div id="drum-machine" style={drumMachineDisplay}>
+      <div id="drum-machine">
 
         <div style={buttonsDisplay}>
 

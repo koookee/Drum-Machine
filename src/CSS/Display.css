@@ -1,0 +1,15 @@
+@media only screen and (max-width: 670px) and (min-width:615px) {
+   #display {
+  font-size: 20px;
+  }
+}
+@media only screen and (max-width: 615px) and (min-width:525px){
+   #display {
+  font-size: 15px;
+  }
+}
+@media only screen and (max-width: 525px){
+   #display {
+  font-size: 10px;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../CSS/Display.css';
 
 class Display extends React.Component{
   constructor(){
@@ -7,11 +8,11 @@ class Display extends React.Component{
 
 
   render(){
-    let borderAround = {borderStyle:"solid",borderRadius: "10px", alignSelf:"center"};
+    let borderAround = {alignSelf:"center", flex:"0 0 auto", width:"20%"};
 
     return(
       <div style={borderAround}>
-      <h1 id="display">{this.props.audioName}</h1>
+      <h4 id="display" style={{fontFamily:"Verdana"}}>{this.props.audioName}</h4>
       </div>
     )
   }

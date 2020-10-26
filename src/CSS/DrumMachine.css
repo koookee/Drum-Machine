@@ -1,0 +1,11 @@
+#drum-machine{
+  display:flex;
+  flex:wrap;
+  border-style:solid;
+  justify-content:space-evenly;
+  margin:15% auto;
+  width:50%;
+  border-radius: 5px;
+  overflow:hidden;
+  background-color:#e8ded2;
+}

@@ -4,15 +4,8 @@ import DrumMachine from './Components/DrumMachine.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  //Displays the flexbox close to the center of the page
-  let flexDisplay = {
-    margin:"15% auto",
-    width:"50%",
-    borderRadius: "5px",
-    overflow:"hidden"
-  }
   return (
-    <div style={flexDisplay}>
+    <div style={{height: "100%",position: "absolute",left: "0",width: "100%",overflow: "hidden",backgroundColor:"#D3DBFF"}}>
     <DrumMachine />
     </div>
   );
