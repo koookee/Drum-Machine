@@ -5,8 +5,6 @@ class Display extends React.Component{
   constructor(){
     super();
   }
-
-
   render(){
     let borderAround = {alignSelf:"center", flex:"0 0 auto", width:"20%"};
 
